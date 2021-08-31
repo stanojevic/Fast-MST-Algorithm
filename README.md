@@ -7,6 +7,6 @@ Implementation of fast algorithms for (Maximum Spanning Tree) MST parsing that i
 The algorithms and their performance are presented in:
 
 A Root of a Problem: Optimizing Single-Root Dependency Parsing<br/>
-Miloš Stanojević and Shay Cohen<br/>
+Miloš Stanojević and Shay B. Cohen<br/>
 EMNLP 2021
 
