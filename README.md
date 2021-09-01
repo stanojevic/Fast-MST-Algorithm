@@ -5,7 +5,7 @@ Implementation of fast algorithms for (Maximum Spanning Tree) MST parsing that i
 The implementation finds *Maximum* Spanning Tree. If you want minimum spanning tree instead you can provide negative weights. The implementation contains three components:
 - Tarjan's algorithm for finding unconstrained MST
 - Reweighting meta-algorithm for constraining MST to have only one ROOT edge (see reference below)
-- ArcMax optimization for speed improvements on ``easy'' inputs
+- ArcMax optimization for speed improvements on <em>easy</em> inputs
 
 Everything relevant for MST dependency parsing can be accessed trough `fast_parse` function as shown here:
 
