@@ -35,13 +35,13 @@ class EdgePriorityQueue:
 
 def tarjan(weights : np.ndarray) -> np.ndarray:
     weights = weights.copy()  # just in case
-    weights[0, :] = -np.inf
+    weights[:, 0] = -np.inf
     n = weights.shape[0]
     max_vertices = n*2-1
     vertices_in = [None for _ in range(max_vertices)]
     vertices_prev = np.zeros(max_vertices, dtype=int)-1
     vertices_children = [[] for _ in range(max_vertices)]
-    vertices_queues = [EdgePriorityQueue(dep, weights[dep]) for dep in range(n)] + [None for _ in range(max_vertices-n)]
+    vertices_queues = [EdgePriorityQueue(dep, weights[:, dep]) for dep in range(n)] + [None for _ in range(max_vertices-n)]
     vertices_parent = np.arange(max_vertices)
     vertices_highway = np.arange(max_vertices)
     next_free = n
@@ -124,14 +124,12 @@ def reweighting(weights: np.array):
     weights = weights.copy()
     n = weights.shape[0]-1
     correction = n*(np.nanmax(weights_no_inf)-np.nanmin(weights_no_inf))+1
-    weights[:, 0] -= correction
+    weights[0] -= correction
     weights[0, 0] = -np.inf
     return weights
 
 
-# weights[dep][head] = log p(head|dep)
-# sum_head weights[dep][head] = 1   --- that is if weights were probs (not logprobs)
-# weights[dep][head] =  weight of head ---> dep (head entering dep)
+# weights[head][dep] =  weight of head ---> dep (head entering dep)
 def fast_parse(weights: np.array, one_root: bool) -> np.array:
     proposal = weights.argmax(axis=1)
     root_count = np.count_nonzero(proposal[1:] == 0)

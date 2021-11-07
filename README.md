@@ -1,5 +1,11 @@
 # Fast MST Algorithm
-Implementation of fast algorithms for (Maximum Spanning Tree) MST parsing that includes fast ArcMax+Reweighting+Tarjan algorithm for single-root dependency parsing.
+Implementation of the fast algorithm for Single-Root Maximum Spanning Tree by [Stanojević and Cohen (EMNLP 2021)](#references).
+
+## Installation
+
+```bash
+pip install git+https://github.com/stanojevic/Fast-MST-Algorithm
+```
 
 ## Usage
 The implementation finds *Maximum* Spanning Tree. If you want minimum spanning tree instead you can provide negative weights. The implementation contains three components:
@@ -9,23 +15,30 @@ The implementation finds *Maximum* Spanning Tree. If you want minimum spanning t
 
 Everything relevant for MST dependency parsing can be accessed trough `fast_parse` function as shown here:
 
-```
+```python
 >>> from mst import fast_parse
 >>> import numpy as np
+>>> np.random.seed(42)
 >>> example_weights = np.random.rand(10, 10)
 >>> fast_parse(example_weights, one_root=True)
-array([-1,  3,  5,  6,  9,  1,  0,  1,  9,  3])
+array([-1,  0,  1,  5,  3,  2,  8,  6,  3,  6])
 >>> fast_parse(example_weights, one_root=False)
-array([-1,  3,  5,  0,  9,  1,  0,  1,  9,  3])
+array([-1,  0,  5,  7,  3,  3,  7,  0,  3,  6])
 ```
 
-Input weight matrix weight `[i, j]` is interpreted the weight of arc going from j to i (j is the head while i is the dependent). Token 0 is treated at the root note of the MST (it doesn't have an incoming arc).
+Input matrix weight `[i, j]` is interpreted the weight of arc going from i to j (i is the head while j is the dependent). Token 0 is treated at the root note of the MST (it doesn't have an incoming arc).
+Note that this order of head and dependent is different from the presentation in the paper.
 
 ## References
 
-The algorithms and their performance are presented in:
-
-A Root of a Problem: Optimizing Single-Root Dependency Parsing<br/>
-Miloš Stanojević and Shay B. Cohen<br/>
-EMNLP 2021
-
+```latex
+@inproceedings{stanojevic:cohen,
+ title = {A Root of a Problem: Optimizing Single-Root Dependency Parsing},
+ author = {Stanojevi\'{c}, Milo\v{s} and Cohen, Shay B.},
+ booktitle = {Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
+ month = {November},
+ year = {2021},
+ publisher = {Association for Computational Linguistics},
+ url = {https://stanojevic.github.io/papers/EMNLP_2021_Single_Root.pdf},
+}
+```
