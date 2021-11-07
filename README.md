@@ -18,12 +18,14 @@ Everything relevant for MST dependency parsing can be accessed trough `fast_pars
 ```python
 >>> from mst import fast_parse
 >>> import numpy as np
->>> np.random.seed(42)
->>> example_weights = np.random.rand(10, 10)
->>> fast_parse(example_weights, one_root=True)
-array([-1,  0,  1,  5,  3,  2,  8,  6,  3,  6])
->>> fast_parse(example_weights, one_root=False)
-array([-1,  0,  5,  7,  3,  3,  7,  0,  3,  6])
+
+>>> W = np.random.rand(5, 5)
+
+>>> fast_parse(W, one_root=False)
+array([-1,  2,  0,  4,  0])
+
+>>> fast_parse(W, one_root=True)
+array([-1,  2,  0,  4,  2])
 ```
 
 Input matrix weight `[i, j]` is interpreted the weight of arc going from i to j (i is the head while j is the dependent). Token 0 is treated at the root note of the MST (it doesn't have an incoming arc).

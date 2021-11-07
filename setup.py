@@ -13,6 +13,7 @@ setup(
     url="https://github.com/stanojevic/Fast-MST-Algorithm",
     license='MIT License',
     py_modules=['mst'],
+    install_requires=['numpy'],
     classifiers=[
                     "Programming Language :: Python :: 3",
                     "License :: OSI Approved :: MIT License",
