@@ -1,5 +1,5 @@
 # Fast MST Algorithm
-Implementation of the fast algorithm for Single-Root Maximum Spanning Tree by [Stanojević and Cohen (EMNLP 2021)](#references).
+Implementation of the fast algorithm for Single-Root Maximum Spanning Tree by [Stanojević and Cohen (EMNLP 2021)](https://aclanthology.org/2021.emnlp-main.823.pdf).
 
 ## Installation
 
@@ -34,13 +34,17 @@ Note that this order of head and dependent is different from the presentation in
 ## References
 
 ```latex
-@inproceedings{stanojevic:cohen,
- title = {A Root of a Problem: Optimizing Single-Root Dependency Parsing},
- author = {Stanojevi\'{c}, Milo\v{s} and Cohen, Shay B.},
- booktitle = {Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing},
- month = {November},
- year = {2021},
- publisher = {Association for Computational Linguistics},
- url = {https://stanojevic.github.io/papers/EMNLP_2021_Single_Root.pdf},
+@inproceedings{stanojevic-cohen-2021-root,
+    title = "A Root of a Problem: Optimizing Single-Root Dependency Parsing",
+    author = "Stanojevi{\'c}, Milo{\v{s}}  and
+      Cohen, Shay B.",
+    booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2021",
+    address = "Online and Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.emnlp-main.823",
+    pages = "10540--10557",
+    abstract = "We describe two approaches to single-root dependency parsing that yield significant speed ups in such parsing. One approach has been previously used in dependency parsers in practice, but remains undocumented in the parsing literature, and is considered a heuristic. We show that this approach actually finds the optimal dependency tree. The second approach relies on simple reweighting of the inference graph being input to the dependency parser and has an optimal running time. Here, we again show that this approach is fully correct and identifies the highest-scoring parse tree. Our experiments demonstrate a manyfold speed up compared to a previous graph-based state-of-the-art parser without any loss in accuracy or optimality.",
 }
 ```
