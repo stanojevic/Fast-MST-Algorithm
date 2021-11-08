@@ -33,11 +33,10 @@ Note that this order of head and dependent is different from the presentation in
 
 ## References
 
-```latex
+```
 @inproceedings{stanojevic-cohen-2021-root,
     title = "A Root of a Problem: Optimizing Single-Root Dependency Parsing",
-    author = "Stanojevi{\'c}, Milo{\v{s}}  and
-      Cohen, Shay B.",
+    author = "Stanojevi{\'c}, Milo{\v{s}}  and Cohen, Shay B.",
     booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
     month = nov,
     year = "2021",
