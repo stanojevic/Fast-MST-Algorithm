@@ -1,6 +1,6 @@
 
 __author__ = "Miloš Stanojević"
-__license__ = "Apache-2.0"
+__license__ = "MIT"
 
 
 import numpy as np
