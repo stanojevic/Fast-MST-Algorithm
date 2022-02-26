@@ -131,7 +131,7 @@ def reweighting(weights: np.array):
 
 # weights[head][dep] =  weight of head ---> dep (head entering dep)
 def fast_parse(weights: np.array, one_root: bool) -> np.array:
-    proposal = weights.argmax(axis=1)
+    proposal = weights.argmax(axis=0)
     root_count = np.count_nonzero(proposal[1:] == 0)
 
     if is_tree(proposal) and (not one_root or root_count == 1):
