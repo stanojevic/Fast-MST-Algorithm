@@ -1,6 +1,14 @@
 # Fast MST Algorithm
 Implementation of the fast algorithm for Single-Root Maximum Spanning Tree by [Stanojević and Cohen (EMNLP 2021)](https://aclanthology.org/2021.emnlp-main.823.pdf).
 
+# *new*
+Much faster implementation of this algorithm is available in the [SynJax package](https://github.com/deepmind/synjax/blob/master/synjax).
+SynJax dependencies include JAX and other libraries, but for running the non-projective spanning tree algorithm from SynJax you only need to install Numba and Numpy.
+The implementation in SynJax is essentially the same as the one in this repository except for the Numba annotations that compile the algorithm down to machine code.
+The module in the SynJax repository that does maximum spanning tree parsing is located in [synjax/_src/deptree_algorithms/deptree_non_proj_argmax.py](https://github.com/deepmind/synjax/blob/master/synjax/_src/deptree_algorithms/deptree_non_proj_argmax.py).
+If you want a pure Python version of the code without any Numba dependencies then the repository you are currently in is probably what you need.
+To see speed improvements with SynJax take a look at the Figure 3 in the [SynJax paper](https://arxiv.org/pdf/2308.03291.pdf#page=11).
+
 ## Installation
 
 ```bash
